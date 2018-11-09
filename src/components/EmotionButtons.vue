@@ -2,6 +2,7 @@
   <div class="emotion-buttons">
     <div v-for="emotion in ['angry', 'curious', 'love', 'boring', 'like', 'surprise']"
       :key="emotion"
+      @click="sendEmotion(emotion)"
       class="emotion-button">
       {{ emotion }}
     </div>
@@ -9,8 +10,14 @@
 </template>
 
 <script>
-export default {
+import { sendEmotion } from '@/firebase/emotion.js'
 
+export default {
+  methods: {
+    sendEmotion (type) {
+      sendEmotion(type)
+    }
+  }
 }
 </script>
 
