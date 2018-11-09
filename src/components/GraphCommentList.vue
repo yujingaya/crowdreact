@@ -1,6 +1,6 @@
 <template>
   <div class="graph-comment-list">
-    코멘트 리스트
+    comment list
   </div>
 </template>
 
