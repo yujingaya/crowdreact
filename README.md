@@ -1,5 +1,10 @@
 # crowdreact
 
+## 시작하기
+1. [nodeJS](https://nodejs.org/) 설치
+2. git clone
+3. 프로젝트 폴덩 들어가서 아래의 Project setup 따라하기
+
 ## Project setup
 ```
 npm install
@@ -15,15 +20,3 @@ npm run serve
 npm run build
 ```
 
-### Run your tests
-```
-npm run test
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
