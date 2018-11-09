@@ -1,0 +1,36 @@
+{
+  "emotions": [
+    {
+      "sender": "unique-id",
+      "type": "",
+      "timestamp": "2018-11-09T16:00:00"
+    },
+    {
+      "sender": "unique-id",
+      "type": "",
+      "timestamp": "2018-11-09T16:00:00"
+    },
+    {
+      "sender": "unique-id",
+      "type": "",
+      "timestamp": "2018-11-09T16:00:00"
+    }
+  ],
+  "comments": [
+    {
+      "sender": "unique-id",
+      "message": "",
+      "timestamp": "2018-11-09T16:00:00"
+    },
+    {
+      "sender": "unique-id",
+      "message": "",
+      "timestamp": "2018-11-09T16:00:00"
+    },
+    {
+      "sender": "unique-id",
+      "message": "",
+      "timestamp": "2018-11-09T16:00:00"
+    }
+  ]
+}
