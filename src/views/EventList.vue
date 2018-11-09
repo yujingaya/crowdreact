@@ -75,7 +75,7 @@ export default {
 
 .event-filter > .event-filter-kind {
   padding: 0.75rem 0;
-  color: grey;
+  color: red;
   font-weight: bold;
 }
 
