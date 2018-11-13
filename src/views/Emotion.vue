@@ -14,7 +14,7 @@
             name: $route.params.name
           }
         }">
-          <img src="@/assets/angry.png">
+          <img src="@/assets/chart.png">
         </router-link>
       </div>
     </div>
