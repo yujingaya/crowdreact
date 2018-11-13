@@ -1,13 +1,4 @@
 <template>
-  <!-- <div class="emotion-buttons">
-    <div v-for="(emotion, index) in ['angry', 'curious', 'love', 'boring', 'like', 'surprise']"
-      :key="emotion"
-      @click="sendEmotion(emotion)"
-      class="emotion-button">
-      {{ emotion }}
-    </div>
-  </div> -->
-
   <div class="emotion-buttons">
     <div v-for="item in items"
       :key="item.emotion"
