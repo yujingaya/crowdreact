@@ -93,7 +93,7 @@ export default {
 	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #dfdfdf), color-stop(1, #545454) );
 	background:-moz-linear-gradient( center top, #dfdfdf 5%, #ededed 100% );
 	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#dfdfdf', endColorstr='#ededed');
-	background-color:#383838;
+	background-color:var(--theme-yellow);
 }.emotion-button:active {
 	position:relative;
 	top:1px;

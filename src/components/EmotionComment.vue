@@ -1,7 +1,13 @@
 <template>
   <div class="emotion-comment">
-    <input type="text"
-      placeholder="What's happening?">
+    <div class="field">
+      <p class="control has-icons-right">
+        <input class="input" type="email" placeholder="What's happening?">
+        <span class="icon is-small is-right">
+          <i class="fas fa-paper-plane"></i>
+        </span>
+      </p>
+    </div>
   </div>
 </template>
 
@@ -19,8 +25,9 @@ export default {
 }
 
 .emotion-comment input {
-  font-size: 1.5rem;
-  width: 100%;
+  font-size: 1rem;
+  padding: 0.3rem;
+  /* width: 96%; */
   border-color:darkblue;
 }
 </style>

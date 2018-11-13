@@ -14,7 +14,7 @@
             name: $route.params.name
           }
         }">
-          <i class="fas fa-chart-line"></i>
+          <img src="@/assets/angry.png">
         </router-link>
       </div>
     </div>
@@ -38,10 +38,16 @@ export default {
 
 <style scoped>
 .navigation-bar {
+  
   background-color: var(--theme-yellow);
   padding: 0.75rem;
   display: flex;
   justify-content: space-between;
+}
+
+.menu.is-right img {
+  width: 23px;
+  height: 23px;
 }
 
 .emotion-container {
@@ -49,8 +55,8 @@ export default {
   display: flex;
   flex-direction: column;
   background: #2980B9;  /* fallback for old browsers */
-  background: -webkit-linear-gradient( #2980B9, #6DD5FA, #FFFFFF 50%);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient( #2980B9,#6DD5FA,#FFFFFF 50%); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: -webkit-linear-gradient( #2980B9, #6DD5FA, #FFFFFF 45%);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient( #2980B9,#6DD5FA,#FFFFFF 45%); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
   background-color: mediumspringgreen;
 }
