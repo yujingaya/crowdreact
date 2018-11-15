@@ -1,35 +1,132 @@
 {
   "emotions": [
     {
-      "sender": "unique-id",
-      "type": "",
-      "timestamp": "2018-11-09T16:00:00"
+      "sender": "1",
+      "type": "angry",
+      "timestamp": "2018-11-09T19:00:00.000Z"
     },
     {
-      "sender": "unique-id",
-      "type": "",
-      "timestamp": "2018-11-09T16:00:00"
+      "sender": "1",
+      "type": "curious",
+      "timestamp": "2018-11-09T19:01:00.000Z"
     },
     {
-      "sender": "unique-id",
-      "type": "",
-      "timestamp": "2018-11-09T16:00:00"
+      "sender": "1",
+      "type": "love",
+      "timestamp": "2018-11-09T19:02:00.000Z"
     },
     {
-      "sender": "unique-id",
-      "type": "",
-      "timestamp": "2018-11-09T16:00:00"
+      "sender": "1",
+      "type": "boring",
+      "timestamp": "2018-11-09T19:03:00.000Z"
+    },
+    {
+      "sender": "1",
+      "type": "like",
+      "timestamp": "2018-11-09T19:04:00.000Z"
+    },
+    {
+      "sender": "1",
+      "type": "surprise",
+      "timestamp": "2018-11-09T19:05:00.000Z"
+    },{
+      "sender": "1",
+      "type": "angry",
+      "timestamp": "2018-11-09T19:06:00.000Z"
+    },
+    {
+      "sender": "1",
+      "type": "curious",
+      "timestamp": "2018-11-09T19:07:00.000Z"
+    },
+    {
+      "sender": "1",
+      "type": "love",
+      "timestamp": "2018-11-09T19:08:00.000Z"
+    },
+    {
+      "sender": "1",
+      "type": "boring",
+      "timestamp": "2018-11-09T19:09:00.000Z"
+    },
+    {
+      "sender": "1",
+      "type": "like",
+      "timestamp": "2018-11-09T19:10:00.000Z"
+    },
+    {
+      "sender": "1",
+      "type": "surprise",
+      "timestamp": "2018-11-09T19:11:00.000Z"
+    },{
+      "sender": "1",
+      "type": "angry",
+      "timestamp": "2018-11-09T19:12:00.000Z"
+    },
+    {
+      "sender": "1",
+      "type": "curious",
+      "timestamp": "2018-11-09T19:13:00.000Z"
+    },
+    {
+      "sender": "1",
+      "type": "love",
+      "timestamp": "2018-11-09T19:14:00.000Z"
+    },
+    {
+      "sender": "1",
+      "type": "boring",
+      "timestamp": "2018-11-09T19:15:00.000Z"
+    },
+    {
+      "sender": "1",
+      "type": "like",
+      "timestamp": "2018-11-09T19:16:00.000Z"
+    },
+    {
+      "sender": "1",
+      "type": "surprise",
+      "timestamp": "2018-11-09T19:17:00.000Z"
+    },{
+      "sender": "1",
+      "type": "angry",
+      "timestamp": "2018-11-09T19:18:00.000Z"
+    },
+    {
+      "sender": "1",
+      "type": "curious",
+      "timestamp": "2018-11-09T19:19:00.000Z"
+    },
+    {
+      "sender": "1",
+      "type": "love",
+      "timestamp": "2018-11-09T19:20:00.000Z"
+    },
+    {
+      "sender": "1",
+      "type": "boring",
+      "timestamp": "2018-11-09T19:21:00.000Z"
+    },
+    {
+      "sender": "1",
+      "type": "like",
+      "timestamp": "2018-11-09T19:22:00.000Z"
+    },
+    {
+      "sender": "1",
+      "type": "surprise",
+      "timestamp": "2018-11-09T19:23:00.000Z"
     }
   ],
   "comments": [
     {
       "sender": "unique-id",
-      "message": "",
+      "message": "like",
       "timestamp": "2018-11-09T16:00:00"
     },
     {
       "sender": "unique-id",
-      "message": "",
+      "message": "surprise",
       "timestamp": "2018-11-09T16:00:00"
     },
     {
