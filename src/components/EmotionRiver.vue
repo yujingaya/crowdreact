@@ -12,7 +12,8 @@ export default {
 
 <style>
 .emotion-river {
-  margin-top: 5rem;
+  margin-top: 3rem;
   text-align: center;
+  height: 500px;
 }
 </style>

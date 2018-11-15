@@ -38,7 +38,7 @@ export default {
           key: 1
         },
         {
-          name: 'Reconfigurable Human-Machine...',
+          name: 'Human-Machine Seminar',
           image: 'HCI@KAIST',
           type: 'SEMINAR',
           key: 2
