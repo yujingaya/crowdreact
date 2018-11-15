@@ -21,7 +21,6 @@ export default {
 .emotion-comment {
   padding: 1rem 0.5rem;
   align-content: center;
-  
 }
 
 .emotion-comment input {
