@@ -2,7 +2,7 @@
   <div class="emotion-comment">
     <div class="field">
       <p class="control has-icons-right">
-        <input class="input" type="email" placeholder="What's happening?">
+        <input class="input" placeholder="What's happening?">
         <span class="icon is-small is-right">
           <i class="fas fa-paper-plane"></i>
         </span>
