@@ -2,8 +2,12 @@
   <div class="emotion-comment">
     <div class="field">
       <p class="control">
+<<<<<<< HEAD
         <input
           v-model="message"
+=======
+        <input v-model="message"
+>>>>>>> 2181d6f03f4633495848f00f01517d2afe1eac1f
           ref="input"
           class="input is-rounded"
           placeholder="What's happening?">
