@@ -2,26 +2,27 @@
   <div class="emotion-comment">
     <div class="field">
       <p class="control">
-        <input 
+        <input
           v-model="message"
           ref="input"
           class="input is-rounded"
           placeholder="What's happening?">
-        <transition
-          @before-enter="beforeEnter"
-          @after-enter="afterEnter">
-          <div
-            v-show="sending"
-            class="plane">
-            {{ message }}
-          </div>
-        </transition>
         <span @click="send"
           class="send-button-container">
           <i class="fas fa-paper-plane"></i>
         </span>
       </p>
     </div>
+    <transition
+      @before-enter="beforeEnter"
+      @after-enter="afterEnter">
+      <div
+        v-show="sending"
+        class="plane">
+        <!-- {{ message }} -->
+        <i class="fas fa-paper-plane"></i>
+      </div>
+    </transition>
   </div>
 </template>
 
@@ -36,23 +37,23 @@ export default {
   methods: {
     send () {
       this.sending = true
+      this.message = ' '
       setTimeout(() => {
         this.sending = false
-      }, 600)
+        this.message = ''
+      }, 500)
     },
     beforeEnter (el) {
       const { top, left } = this.$refs.input.getBoundingClientRect()
-      el.style.position = 'fixed'
-      el.style.top = top + 6 + 'px'
-      el.style.left = left + 12 + 'px'
+
+      el.style.top = top + window.scrollY + 3 + 'px'
+      el.style.left = left + 4 + 'px'
       el.style.fontSize = '1rem'
-      el.style.opacity = '0.25'
     },
     afterEnter (el) {
       el.style.top = '1rem'
-      el.style.left = 'calc(100% - 1.5rem)'
-      el.style.fontSize = '0.75rem'
-      el.style.opacity = '1'
+      el.style.left = 'calc(100% - 2rem)'
+      el.style.fontSize = '0.5rem'
     }
   }
 }
@@ -74,6 +75,10 @@ export default {
   box-shadow: none;
 }
 
+.field {
+  margin-bottom: 0;
+}
+
 .control {
   position: relative;
 }
@@ -91,6 +96,10 @@ export default {
 }
 
 .plane {
+  position: absolute;
+  padding: 0.2em 0.5em 0.2em 0.4em;
+  border-radius: 1rem;
+  background-color: var(--theme-blue);
   white-space: nowrap;
   transition:
     top 0.4s ease-out,
