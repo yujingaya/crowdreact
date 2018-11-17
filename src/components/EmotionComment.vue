@@ -2,8 +2,7 @@
   <div class="emotion-comment">
     <div class="field">
       <p class="control">
-        <input 
-          v-model="message"
+        <input v-model="message"
           ref="input"
           class="input is-rounded"
           placeholder="What's happening?">
