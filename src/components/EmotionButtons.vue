@@ -88,6 +88,7 @@ line-height:50px;
 text-decoration:none;
 text-align:center;
 text-shadow:1px 1px 0px #ffffff;
+box-shadow: 0 1.5px gray;
 }
 .emotion-button:hover {
 background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #dfdfdf), color-stop(1, #545454) );
