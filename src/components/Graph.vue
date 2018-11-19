@@ -1,20 +1,18 @@
 <template>
-  <div class="graph scrollbar1" id="style-2">
-    <div class="force-overflow">
-      <canvas id="planet-chart" width="400" height="400"></canvas>
-    </div>
+  <div class="chart-field scrollbar1" id="style-2" >
+        <canvas class="height-fix" id="emotion-chart"></canvas>
   </div>
 
 </template>
 
 <script>
 import Chart from 'chart.js'
-import planetChartData from '../chart-data.js'
+import emotionChartData from '../chart-data.js'
 
 export default {
   data () {
     return {
-      planetChartData: planetChartData
+      emotionChartData: emotionChartData
     }
   },
   methods: {
@@ -29,25 +27,33 @@ export default {
     }
   },
   mounted () {
-    this.createChart('planet-chart', this.planetChartData)
+    this.createChart('emotion-chart', this.emotionChartData)
   }
 }
 </script>
 
 <style scoped>
+.height-fix{
+  position: relative;
+  height: 65%; 
+  padding-right : 10rem;
+}
+.chart-field{
+  margin-top:1rem;
+  align-items: center;  
+  padding-left : 10rem;
+  
+  padding-top : 2rem;
+  
+}
 .scrollbar1
 {
-  margin-left: 30px;
-  float: left;
-  height: 450px;
-  width: 300px;
-  background: whitesmoke;
+  margin-left: 2rem;
+  margin-right: 2rem;
+  margin-bottom: 2rem;
+  height: 30rem;
+  background: white;
   overflow-x: scroll;
-  margin-bottom: 25px;
-}
-.force-overflow
-{
-  min-width: 300px;
 }
 
 #style-2::-webkit-scrollbar-track
@@ -67,7 +73,7 @@ export default {
 {
   border-radius: 10px;
   -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
-  background-color: pink;
+  background-color: grey;
 }
 
 </style>
