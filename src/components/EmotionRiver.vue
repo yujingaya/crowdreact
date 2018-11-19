@@ -3,9 +3,9 @@
     <transition-group name="emotions" tag="div">
       <div
         v-for="emotion in emotions"
-        :key="emotion.time"
+        :key="emotion.timestamp"
         class="emotion"
-        :class="{ ['is-' + (emotion.time % 3 + 1)]: true }">
+        :class="{ ['is-' + (emotion.timestamp % 3 + 1)]: true }">
         <img class="updown" :src="emoji(emotion.type)"/>
       </div>
     </transition-group>
@@ -13,11 +13,13 @@
 </template>
 
 <script>
+import { emotionsRef } from '@/firebase/emotion.js'
+
 export default {
   data () {
     return {
       emotions: [],
-      id: null
+      callback: null
     }
   },
   methods: {
@@ -33,26 +35,17 @@ export default {
     }
   },
   mounted () {
-    this.id = setInterval(() => {
-      this.emotions.push({
-        type: (() => {
-          switch(Date.now() % 6) {
-            case 0: return 'angry'
-            case 1: return 'bored'
-            case 2: return 'curious'
-            case 3: return 'like'
-            case 4: return 'love'
-            case 5: return 'surprised'
-          }
-        })(),
-        time: Date.now()
-      })
-      this.emotions = this.emotions
-        .filter(e => Date.now() - e.time <= 1000)
-    }, 1000)
+    // @TODO: 이미 백엔드에 있는 이모지는 저장할 필요 없음
+    this.callback = emotionsRef.on('child_added', emotion => {
+      const { timestamp } = emotion.val()
+      // 동기화에 10초면 충분할듯?
+      if (Date.now() - timestamp < 10 * 1000) {
+        this.emotions.push(emotion.val())
+      }
+    })
   },
   unmount () {
-    clearInterval(this.id)
+    emotionsRef.off('child_added', this.callback)
   }
 }
 </script>
