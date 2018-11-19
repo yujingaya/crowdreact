@@ -1,9 +1,11 @@
 import database from './database.js'
 
+export const emotionsRef = database.ref('/emotions')
+
 export function sendEmotion (type) {
-  database.ref('/').set({
+  database.ref('/emotions').push({
     sender: '1',
     type: type,
-    timestamp: '2018-11-09T13:11:01'
+    timestamp: Date.now()
   })
 }
