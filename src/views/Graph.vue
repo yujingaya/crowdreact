@@ -17,6 +17,7 @@
       </div>
     </div>
     <div class="graph-container">
+      <!-- <MiddleLine/> -->
       <Graph/>
       <GraphCommentList/>
       <GraphEmotionButtons/>
@@ -28,10 +29,12 @@
 import Graph from '@/components/Graph.vue'
 import GraphCommentList from '@/components/GraphCommentList.vue'
 import GraphEmotionButtons from '@/components/GraphEmotionButtons.vue'
+// import MiddleLine from '@/components/MiddleLine.vue'
 
 export default {
   components: {
     Graph, GraphCommentList, GraphEmotionButtons
+    // , MiddleLine
   }
 }
 </script>
