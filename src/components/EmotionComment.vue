@@ -11,10 +11,6 @@
           <i class="fas fa-paper-plane"></i>
         </span>
       </p>
-      <span class="icon is-small is-right">
-        <button class="send">
-          <i class="fas fa-paper-plane"></i></button>
-      </span>
     </div>
     <transition
       @before-enter="beforeEnter"
