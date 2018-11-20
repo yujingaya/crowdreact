@@ -5,7 +5,7 @@ CrowdReact enables expressing and archiving real-time feelings in event.
 Follow instructions below to get a copy of this project and run on your local machine for testing purpose.
 
 ### Prerequisite
-- [nodeJS](https://nodejs.org/)
+- [Node.js](https://nodejs.org/)
 - [npm](https://npmjs.org) 
 
 ### Project setup
