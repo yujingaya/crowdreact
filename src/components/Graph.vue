@@ -37,11 +37,11 @@ export default {
 
       const currentLength = this.chart.data.labels.length
       const bucketPosition = (bucket - this.start) / period
-      console.log(currentLength, bucketPosition)
+      // console.log(currentLength, bucketPosition)
       for (let i = currentLength; i <= bucketPosition; i++) {
         const labelMoment = new Date(this.start + i * period)
         const label = `${labelMoment.getHours()}:${(labelMoment.getMinutes() < 10 ? '0' : '') + labelMoment.getMinutes()}`
-        console.log('label', label)
+        // console.log('label', label)
         this.chart.data.labels.push(label)
         this.chart.data.datasets.forEach(dataset => {
           dataset.data.push(0)
@@ -54,7 +54,7 @@ export default {
         }
       })
       this.chart.update()
-      console.log(this.chart.data)
+      // console.log(this.chart.data)
     })
   },
   unmount () {
