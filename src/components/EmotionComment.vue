@@ -60,8 +60,8 @@ export default {
 
 <style scoped>
 .emotion-comment {
-  padding: 1rem 0.5rem;
-  align-content: center;
+padding: 1rem 0.5rem;
+align-content: center;
 }
 
 .emotion-comment input {
