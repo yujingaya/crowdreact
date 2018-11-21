@@ -5,7 +5,7 @@
         v-for="emotion in emotions"
         :key="emotion.timestamp"
         class="emotion"
-        :class="{ ['is-' + (emotion.timestamp % 3 + 1)]: true, 'my-emotion':(emotion.sender_id==myId) }">
+        :class="{ ['is-' + (emotion.timestamp % 3 + 1)]: true, 'my-emotion':(emotion.sender===myId) }">
         <img class="updown" :src="emoji(emotion.type)"/>
       </div>
     </transition-group>
@@ -20,7 +20,8 @@ export default {
   data () {
     return {
       emotions: [],
-      callback: null
+      callback: null,
+      myId
     }
   },
   methods: {
