@@ -9,6 +9,17 @@ function uuid () {
 
 const myId = uuid()
 
+function alert(){
+  var sample = document.getElementById("sender_id");
+   
+  if( sample.innerHTML == "myId" ){
+    window.alert("yy");
+  }else{
+    //window.alert("nn");
+  }
+   
+}
+
 export const emotionsRef = database.ref('/emotions')
 
 export function sendEmotion (type) {

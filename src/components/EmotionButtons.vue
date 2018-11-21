@@ -11,6 +11,7 @@
   <div class="emotion-buttons">
     <div v-for="item in items"
       :key="item.emotion"
+      onclick="alert()"
       @click="sendEmotion(item.emotion)"
       class="emotion-button">
       <img :src="item.emoji">
