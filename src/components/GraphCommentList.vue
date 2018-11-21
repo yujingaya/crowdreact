@@ -2,24 +2,42 @@
   <div class="graph-comment-list">
     <div class="scrollbar" id="style-2">
       <div class="force-overflow">
-      <p class="message mymessage"> hahahahha ajuuuu nice</p>
-      <p class="message"> hahahahha ajuuuu nice</p>
-      <p class="message"> hahahahha ajuuuu nice</p>
-      <p class="message"> hahahahha ajuuuu nice</p>
-      <p class="message"> hahahahha ajuuuu nice</p>
+      <p class="message mymessage"> </p>
+      <p
+        v-for="comment in comments"
+        :key="comment.timestamp"
+        class="message"
+        :class="{ 'my-message': (myId === comment.sender) }"
+        > {{ comment.content }} </p>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-export default {
+import { commentsRef, myId } from '@/firebase/emotion.js'
 
+export default {
+  data () {
+    return {
+      comments: [],
+      callback: null,
+      myId
+    }
+  },
+  mounted () {
+    this.callback = commentsRef.on('child_added', comment => {
+      this.comments.push(comment.val())
+    })
+  },
+  unmount () {
+    commentsRef.off('child_added', this.callback)
+  }
 }
 </script>
 
 <style>
-.mymessage{
+.my-message{
   background-color: var(--theme-blue);
 }
 .message:not(:last-child){

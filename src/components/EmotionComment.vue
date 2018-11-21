@@ -26,6 +26,8 @@
 </template>
 
 <script>
+import { sendComment } from '@/firebase/emotion.js'
+
 export default {
   data () {
     return {
@@ -35,6 +37,7 @@ export default {
   },
   methods: {
     send () {
+      sendComment(this.message)
       this.sending = true
       this.message = ' '
       setTimeout(() => {

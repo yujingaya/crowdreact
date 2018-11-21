@@ -14,7 +14,17 @@ export const emotionsRef = database.ref('/emotions')
 export function sendEmotion (type) {
   database.ref('/emotions').push({
     sender: myId,
-    type: type,
+    type,
+    timestamp: Date.now()
+  })
+}
+
+export const commentsRef = database.ref('/comments')
+
+export function sendComment (content) {
+  database.ref('/comments').push({
+    sender: myId,
+    content,
     timestamp: Date.now()
   })
 }
