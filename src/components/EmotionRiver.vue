@@ -5,15 +5,15 @@
         v-for="emotion in emotions"
         :key="emotion.timestamp"
         class="emotion"
-        :class="{ ['is-' + (emotion.timestamp % 3 + 1)]: true }">
+        :class="{ ['is-' + (emotion.timestamp % 3 + 1)]: true, 'my-emotion':(emotion.sender_id==myId) }">
         <img class="updown" :src="emoji(emotion.type)"/>
-        <span id="sender_id">{{emotion.sender}}</span>
       </div>
     </transition-group>
   </div>
 </template>
 
 <script>
+import { myId } from '@/firebase/emotion.js'
 import { emotionsRef } from '@/firebase/emotion.js'
 
 export default {
@@ -95,16 +95,15 @@ export default {
   top: 30vh;
 }
 
-.updown {
-  position: absolute;
-  animation: sinY 1.5s alternate ease-in-out;
+.my-emotion img {
   border-style: solid;
   border-radius: 100%;
   border-color: white;
-
 }
-#sender_id {
-  font-size: 20px;
+
+.updown {
+  position: absolute;
+  animation: sinY 1.5s alternate ease-in-out;
 }
 
 </style>

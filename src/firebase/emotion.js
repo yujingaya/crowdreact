@@ -7,18 +7,7 @@ function uuid () {
   return document.cookie ? document.cookie : (document.cookie = ([1e7] + -1e3 + -4e3 + -8e3 + -1e11).replace(/[018]/g, a => (a ^ Math.random() * 16 >> a / 4).toString(16)))
 }
 
-const myId = uuid()
-
-function alert(){
-  var sample = document.getElementById("sender_id");
-   
-  if( sample.innerHTML == "myId" ){
-    window.alert("yy");
-  }else{
-    //window.alert("nn");
-  }
-   
-}
+export const myId = uuid()
 
 export const emotionsRef = database.ref('/emotions')
 

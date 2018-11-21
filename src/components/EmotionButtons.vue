@@ -11,7 +11,6 @@
   <div class="emotion-buttons">
     <div v-for="item in items"
       :key="item.emotion"
-      onclick="alert()"
       @click="sendEmotion(item.emotion)"
       class="emotion-button">
       <img :src="item.emoji">
@@ -55,8 +54,8 @@ export default {
 .emotion-buttons .emotion-button {
   padding: 0.5rem;
   text-align: center;
-
 }
+
 .emotion-button {
 -moz-box-shadow:inset 0px 1px 0px 0px #ffffff;
 -webkit-box-shadow:inset 0px 1px 0px 0px #ffffff;
