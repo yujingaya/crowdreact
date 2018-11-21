@@ -7,6 +7,7 @@
         class="emotion"
         :class="{ ['is-' + (emotion.timestamp % 3 + 1)]: true }">
         <img class="updown" :src="emoji(emotion.type)"/>
+        <span class="sender_id">{{emotion.sender}}</span>
       </div>
     </transition-group>
   </div>
@@ -100,5 +101,10 @@ export default {
   border-style: solid;
   border-radius: 100%;
   border-color: white;
+
 }
+.sender_id {
+  font-size: 20px;
+}
+
 </style>
