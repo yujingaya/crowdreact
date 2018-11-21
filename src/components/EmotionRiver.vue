@@ -97,5 +97,8 @@ export default {
 .updown {
   position: absolute;
   animation: sinY 1.5s alternate ease-in-out;
+  border-style: solid;
+  border-radius: 100%;
+  border-color: white;
 }
 </style>
