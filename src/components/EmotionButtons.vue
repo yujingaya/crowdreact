@@ -1,13 +1,4 @@
 <template>
-  <!-- <div class="emotion-buttons">
-    <div v-for="(emotion, index) in ['angry', 'curious', 'love', 'boring', 'like', 'surprise']"
-      :key="emotion"
-      @click="sendEmotion(emotion)"
-      class="emotion-button">
-      {{ emotion }}
-    </div>
-  </div> -->
-
   <div class="emotion-buttons">
     <div v-for="item in items"
       :key="item.emotion"
@@ -22,17 +13,18 @@
 import { sendEmotion } from '@/firebase/emotion.js'
 
 export default {
-  data: () => ({
-    items: [
-      { emotion: 'angry', emoji: require('@/assets/angry.png') },
-      { emotion: 'curious', emoji: require('@/assets/curious.png') },
-      { emotion: 'love', emoji: require('@/assets/love.png') },
-      { emotion: 'bored', emoji: require('@/assets/bored.png') },
-      { emotion: 'like', emoji: require('@/assets/like.png') },
-      { emotion: 'surprised', emoji: require('@/assets/surprised.png') }
-    ]
-  }),
-
+  data () {
+    return {
+      items: [
+        { emotion: 'angry', emoji: require('@/assets/angry.png') },
+        { emotion: 'curious', emoji: require('@/assets/curious.png') },
+        { emotion: 'love', emoji: require('@/assets/love.png') },
+        { emotion: 'bored', emoji: require('@/assets/bored.png') },
+        { emotion: 'like', emoji: require('@/assets/like.png') },
+        { emotion: 'surprised', emoji: require('@/assets/surprised.png') }
+      ]
+    }
+  },
   methods: {
     sendEmotion (type) {
       sendEmotion(type)

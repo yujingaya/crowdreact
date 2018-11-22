@@ -13,8 +13,7 @@
 </template>
 
 <script>
-import { myId } from '@/firebase/emotion.js'
-import { emotionsRef } from '@/firebase/emotion.js'
+import { myId, emotionsRef } from '@/firebase/emotion.js'
 
 export default {
   data () {
