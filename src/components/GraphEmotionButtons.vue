@@ -11,22 +11,26 @@
     <div v-for="item in items"
       :key="item.emotion" align="center">
       <img :src="item.emoji">
-      <!-- <div
+      <div
         v-for="emotion in emotions"
         :key="emotion.type"
         class="counts"
-        :class="{ 'my-counts': (item.emotion === emotion.type) }"
-        > {{ item.count }} 
-      </div> -->
-      <div class="counts">{{ item.count }} </div>
+        > 
+        {{ item.count }} 
+      </div>
+      <!-- <div class="counts">{{ item.count }} </div> -->
     </div>
   </div>
 </template>
 
 <script>
+
 export default {
   data () {
     return {
+      emotions: [],
+      callback: null,
+      myId,
       items: [
         { emotion: 'angry', emoji: require('@/assets/angry.png'), count: 3 },
         { emotion: 'curious', emoji: require('@/assets/curious.png'), count: 7 },
@@ -36,6 +40,18 @@ export default {
         { emotion: 'surprised', emoji: require('@/assets/surprised.png'), count: 5 }
       ]
     }
+  },
+  mounted () {
+    // @TODO: 이미 백엔드에 있는 이모지는 저장할 필요 없음
+    this.callback = emotionsRef.on('child_added', emotion => {
+      const { type } = emotion.val()
+      if (Date.now() - timestamp < 10 * 1000) { // 받아온 emotion.type 이 어떤 감정인지 확인하고, data() items.count의 숫자를 높이기
+        this.emotions.push(emotion.val())
+      }
+    })
+  },
+  unmount () {
+    emotionsRef.off('child_added', this.callback)
   }
 }
 </script>
