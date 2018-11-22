@@ -2,7 +2,6 @@
   <div class="graph-comment-list">
     <div class="scrollbar" id="style-2">
       <div class="force-overflow">
-      <p class="message mymessage"> </p>
       <p
         v-for="comment in comments"
         :key="comment.timestamp"

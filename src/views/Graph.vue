@@ -13,7 +13,7 @@
         </router-link>
       </div>
       <div class="menu is-right">
-        <i class="fas fa-share-alt"></i>
+        <!-- <i class="fas fa-share-alt"></i> -->
       </div>
     </div>
     <div class="graph-container">
