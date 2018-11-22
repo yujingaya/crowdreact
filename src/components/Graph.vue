@@ -8,6 +8,7 @@
 import Chart from 'chart.js'
 import { emotionsRef } from '@/firebase/emotion.js'
 import emotionChartData from '@/chart-data.js'
+import debounce from 'lodash/debounce'
 
 // 5분 간격
 const period = 5 * 60 * 1000
@@ -27,7 +28,11 @@ export default {
   },
   mounted () {
     this.createChart()
-    this.callback = emotionsRef.on('child_added', emotion => {
+    const updateChart = debounce(() => {
+      this.chart.update()
+    }, 100)
+
+    const childAdded = emotion => {
       const { timestamp, type } = emotion.val()
       const bucket = Math.floor((timestamp + (period / 2)) / period) * period
 
@@ -53,9 +58,11 @@ export default {
           dataset.data[dataset.data.length - 1] += 1
         }
       })
-      this.chart.update()
+      updateChart()
       // console.log(this.chart.data)
-    })
+    }
+
+    this.callback = emotionsRef.on('child_added', childAdded)
   },
   unmount () {
     emotionsRef.off('child_added', this.callback)
