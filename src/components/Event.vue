@@ -5,7 +5,7 @@
         <router-link
           :to="{ name: 'emotion', params: { name: event.name } }">
           <div class="event-image">
-            <img :src="`https://fakeimg.pl/300/282828/eae0d0/?text=${event.image}`">
+            <img :src="event.image">
           </div>
           <div class="event-title">
             {{ event.name }}
@@ -30,26 +30,23 @@ export default {
 }
 
 .event {
-  /* padding: 0.25rem; */
+  padding: 0.25rem;
 }
 
-.link-wrapper {
-  box-shadow: 0 1px 3px rgba(0,0,0,0.03), 0 1px 2px rgba(0,0,0,0.06);
-}
-
-.link-wrapper:hover {
+.event-image img{
+  line-height: 1;
   box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
   transition: all 0.3s cubic-bezier(.25,.8,.25,1);
 }
 
-.event-image {
-  line-height: 1;
+.event-image img:hover {
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
 }
 
 .event-title {
-  padding: 0.5em 0;
-  background-color: whitesmoke;
+  padding: 0.25em 0 1rem;
+  color: rgb(186, 175, 166);
+  font-weight: bold;
   text-align: center;
-  height: 4rem;
 }
 </style>

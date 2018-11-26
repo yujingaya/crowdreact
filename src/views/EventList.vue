@@ -33,22 +33,22 @@ export default {
       currentType: 'ALL',
       events: [
         {
-          name: 'ALL DAY OUT',
-          image: 'ALL DAY OUT',
-          type: 'FESTIVAL',
-          key: 1
+          name: 'Social Computing',
+          image: 'https://fakeimg.pl/300/282828/eae0d0/?text=CS473',
+          type: 'SEMINAR',
+          key: 3
         },
         {
-          name: 'Human-Machine Seminar',
-          image: 'HCI@KAIST',
+          name: 'Seminar',
+          image: 'https://fakeimg.pl/300/282828/eae0d0/?text=HCI@KAIST',
           type: 'SEMINAR',
           key: 2
         },
         {
-          name: 'Social Computing',
-          image: 'Social Computing',
-          type: 'SEMINAR',
-          key: 3
+          name: 'ALL DAY OUT',
+          image: 'http://img.wemep.co.kr/deal/0/538/4025380/f2d4bcc4faab70312dfdfddef6cf642758820d5b.jpg',
+          type: 'FESTIVAL',
+          key: 1
         }
       ]
     }
