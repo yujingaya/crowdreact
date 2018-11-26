@@ -1,6 +1,6 @@
 <template>
-  <div class="chart-field scrollbar1" id="style-2">
-    <canvas class="height-fix" id="emotion-chart"></canvas>
+  <div class="chart-container">
+    <canvas id="emotion-chart"></canvas>
   </div>
 </template>
 
@@ -71,18 +71,21 @@ export default {
 </script>
 
 <style scoped>
+.chart-container {
+  padding: 1rem 0.25rem 0;
+}
 /* .height-fix{
   position: relative;
   height: 65%;
   padding-right: 10rem;
-} */
-/* .chart-field{
+}
+.chart-field{
   margin-top:1rem;
   align-items: center;
   padding-left: 10rem;
   padding-top: 2rem;
-} */
-/* .scrollbar1
+}
+.scrollbar1
 {
   margin-left: 2rem;
   margin-right: 2rem;
@@ -90,9 +93,9 @@ export default {
   height: 30rem;
   background: white;
   overflow-x: scroll;
-} */
+}
 
-/* #style-2::-webkit-scrollbar-track
+#style-2::-webkit-scrollbar-track
 {
   -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
   border-radius: 10px;

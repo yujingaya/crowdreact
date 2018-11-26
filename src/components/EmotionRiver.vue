@@ -45,7 +45,6 @@ export default {
       if (now - timestamp < 1000) {
         this.emotions.push(emotion.val())
       }
-      
     })
   },
   unmount () {
@@ -54,7 +53,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 @keyframes sinX {
   to {
     transform: translateX(calc(100vw + 4rem)) scale(0.65);

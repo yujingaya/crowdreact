@@ -48,12 +48,6 @@ export default {
 }
 
 .graph-container {
-  height: calc(100vh - 40px);
-  display: flex;
-  flex-direction: column;
-}
-
-.graph-container .graph {
-  flex-grow: 1;
+  height: calc(100vh - 48px);
 }
 </style>

@@ -1,14 +1,11 @@
 <template>
   <div class="graph-comment-list">
-    <div class="scrollbar" id="style-2">
-      <div class="force-overflow">
-      <p
-        v-for="comment in comments"
-        :key="comment.timestamp"
-        class="message"
-        :class="{ 'my-message': (myId === comment.sender) }"
-        > {{ comment.content }} </p>
-      </div>
+    <div v-for="comment in comments"
+      :key="comment.timestamp"
+      class="comment"
+      :class="{ 'my-comment': (myId === comment.sender) }">
+      <p>{{ comment.content }}</p>
+      <div class="time"> {{ comment.time }} </div>
     </div>
   </div>
 </template>
@@ -26,7 +23,10 @@ export default {
   },
   mounted () {
     this.callback = commentsRef.on('child_added', comment => {
-      this.comments.push(comment.val())
+      const { content, timestamp, sender } = comment.val()
+      const time = new Date(timestamp)
+      const timeString = `${time.getHours()}:${time.getMinutes()}`
+      this.comments.push({ content, sender, time: timeString })
     })
   },
   unmount () {
@@ -36,14 +36,35 @@ export default {
 </script>
 
 <style>
-.my-message{
-  background-color: var(--theme-blue);
-}
-.message:not(:last-child){
-  margin:0;
+.graph-comment-list {
+  margin: 1rem;
+  padding: 0.25rem 0;
+  border: 1px solid #dbdbdb;
+  border-radius: 0.5rem;
+  height: 150px;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
 }
 
-.scrollbar
+.comment {
+  float: left;
+  clear: both;
+  margin: 0.25rem 0.5rem 0.25rem;
+  border-radius: 0.75rem;
+  padding: 0.375rem 0.75rem;
+  background-color: whitesmoke;
+}
+
+.my-comment{
+  text-align: right;
+  float: right;
+}
+
+.time {
+  color: #aaa;
+}
+
+/* .scrollbar
 {
   margin-left: 2rem;
   margin-right: 2rem;
@@ -71,6 +92,6 @@ export default {
   border-radius: 10px;
   box-shadow: inset 0 0 6px rgba(0,0,0,.3);
   background-color: grey;
-}
+} */
 
 </style>

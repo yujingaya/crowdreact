@@ -1,9 +1,12 @@
 <template>
-  <div class="emotion-buttons">
+  <div class="columns is-mobile is-gapless is-multiline emotions">
     <div v-for="item in items"
-      :key="item.emotion" align="center">
-      <img :src="item.emoji">
-      <div class="counts">{{ emotionsCount[item.emotion] }}</div>
+      :key="item.emotion"
+      class="column is-4">
+      <div class="emotion">
+        <img :src="item.emoji">
+        <div class="count">{{ emotionsCount[item.emotion] }}</div>
+      </div>
     </div>
   </div>
 </template>
@@ -46,19 +49,28 @@ export default {
 </script>
 
 <style scoped>
-.emotion-buttons {
-  padding-left: 2rem;
-  padding-right: 2rem;
-  padding-bottom: 1rem;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-  gap: 1rem;
-}
-.counts{
-  text-size-adjust: initial;
-}
-.emotion-buttons .emotion-button {
-  padding: 3rem;
+.emotions {
+  padding: 0.5rem 1rem 0;
   text-align: center;
+  max-width: 360px;
+  margin: 0 auto;
+}
+
+.emotions .emotion {
+  position: relative;
+  left: -1rem;
+}
+
+.emotions .emotion img {
+  margin-bottom: 0.5rem;
+  height: auto;
+  width: 50px;
+}
+
+.emotions .emotion .count {
+  position: absolute;
+  right: 0;
+  top: 12px;
+  color: gray;
 }
 </style>
