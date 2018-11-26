@@ -16,7 +16,15 @@ export default new Router({
     {
       path: '/emotion/:name',
       name: 'emotion',
-      component: Emotion
+      component: Emotion,
+      beforeEnter (to, from, next) {
+        if (to.params.name !== 'Social Computing') {
+          alert('Unavailable now.')
+          next(false)
+          return
+        }
+        next()
+      }
     },
     {
       path: '/graph/:name',
