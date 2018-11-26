@@ -1,7 +1,8 @@
 <template>
   <div>
     <div class="menu-bar">
-      ...
+      <!-- <i class="fa fa-ellipsis-h"></i> -->
+      Events
     </div>
     <div class="event-filter">
       <div v-for="type in ['ALL', 'FESTIVAL', 'SEMINAR']"
@@ -42,6 +43,12 @@ export default {
           image: 'HCI@KAIST',
           type: 'SEMINAR',
           key: 2
+        },
+        {
+          name: 'Social Computing',
+          image: 'Social Computing',
+          type: 'SEMINAR',
+          key: 3
         }
       ]
     }
@@ -63,20 +70,30 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .menu-bar {
-  text-align: right;
+  text-align: center;
+  font-weight: bold;
+  color: #222;
   padding: 0.75rem;
+  font-size: 1.5rem;
+  line-height: 1;
   background-color: var(--theme-blue);
 }
+
 .event-filter {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  display: flex;
   text-align: center;
 }
 
 .event-filter > .event-filter-kind {
-  padding: 0.75rem 0;
-  color: black;
-  font-weight: bold;
+  cursor: pointer;
+  padding: 0.5rem 0;
+  color: grey;
+  flex: 1;
+}
+
+.event-filter > .event-filter-kind:hover {
+  color: #444;
+  background-color: #f0f0f0;
 }
 
 .event-filter > .event-filter-kind.is-active {
@@ -85,9 +102,9 @@ export default {
 }
 
 .event-list {
-  margin: 0.75rem;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 0.75rem;
+  padding: 0.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  margin: -0.25rem -0.25rem 0;
 }
 </style>

@@ -39,10 +39,13 @@ export default {
     // @TODO: 이미 백엔드에 있는 이모지는 저장할 필요 없음
     this.callback = emotionsRef.on('child_added', emotion => {
       const { timestamp } = emotion.val()
+      const now = Date.now()
+
       // 동기화에 10초면 충분할듯?
-      if (Date.now() - timestamp < 10 * 1000) {
+      if (now - timestamp < 1000) {
         this.emotions.push(emotion.val())
       }
+      
     })
   },
   unmount () {
@@ -52,19 +55,15 @@ export default {
 </script>
 
 <style>
-.emotion-river {
-  margin-top: 3rem;
-  text-align: center;
-  height: 500px;
-}
-
-.emotions-enter-active, .emotions-leave-active {
-  transition: all 1s;
-}
-
 @keyframes sinX {
   to {
     transform: translateX(calc(100vw + 4rem)) scale(0.65);
+  }
+}
+
+@keyframes sinXDesktop {
+  to {
+    transform: translateX(calc(480px + 4rem)) scale(0.65);
   }
 }
 
@@ -74,6 +73,10 @@ export default {
   }
 }
 
+.emotion-river {
+  position: relative;
+}
+
 .emotion {
   position: absolute;
   left: -60px;
@@ -81,6 +84,12 @@ export default {
   animation: sinX 1.5s linear;
   height: 2.5rem;
   width: 2.5rem;
+}
+
+@media screen and (min-width: 480px) {
+  .emotion {
+    animation: sinXDesktop 1.5s linear;
+  }
 }
 
 .emotion.is-1 {
@@ -103,7 +112,7 @@ export default {
 
 .updown {
   position: absolute;
-  animation: sinY 1.5s alternate ease-in-out;
+  animation: sinY 1.5s ease-in-out;
 }
 
 </style>

@@ -62,19 +62,15 @@ export default {
 </script>
 
 <style scoped>
-.emotion-comment {
-padding: 1rem 0.5rem;
-align-content: center;
-}
-
 .emotion-comment input {
-  font-size: 1rem;
-  padding-left: 0.75rem;
+  border: 1px solid #dbdbdb;
+  border-radius: 1rem;
+  box-shadow: none;
+  transition: all 0.2s ease;
 }
 
 .emotion-comment input:focus {
-  border: 1px solid gray;
-  box-shadow: none;
+  border: 1px solid #ababab;
 }
 
 .field {

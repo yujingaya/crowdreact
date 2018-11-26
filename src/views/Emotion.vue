@@ -32,7 +32,9 @@ import EmotionComment from '@/components/EmotionComment.vue'
 import EmotionButtons from '@/components/EmotionButtons.vue'
 
 export default {
-  components: { EmotionRiver, EmotionComment, EmotionButtons }
+  components: {
+    EmotionRiver, EmotionComment, EmotionButtons
+  }
 }
 </script>
 
@@ -50,22 +52,25 @@ export default {
 }
 
 .emotion-container {
-  height: calc(100vh - 40px);
+  height: calc(100vh - 53px);
   display: flex;
   flex-direction: column;
   background: #2980B9;  /* fallback for old browsers */
-  background: -webkit-linear-gradient( #2980B9, #6DD5FA, #FFFFFF 45%);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient( #2980B9,#6DD5FA,#FFFFFF 45%); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: linear-gradient( #2980B9,#6DD5FA,#FFFFFF 45%);
   background-color: mediumspringgreen;
 }
 
 .emotion-container .emotion-river {
-  flex-grow: 1;
-}
-.emotion-river {
-  margin-top: 3rem;
-  text-align: center;
-  height: 500px;
+  flex: 1;
 }
 
+.emotion-container .emotion-comment {
+  flex: none;
+  padding: .75rem;
+}
+
+.emotion-container .emotion-buttons {
+  flex: none;
+  padding: 0 .75rem .75rem;
+}
 </style>
