@@ -105,6 +105,7 @@ export default {
 
 .my-emotion img {
   border-style: solid;
+  border-width: thick;
   border-radius: 100%;
   border-color: white;
 }
