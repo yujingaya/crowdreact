@@ -37,6 +37,7 @@ export default {
   },
   methods: {
     send () {
+      this.$ga.event('Comment', 'Sent', this.message)
       sendComment(this.message)
       this.sending = true
       this.message = ' '

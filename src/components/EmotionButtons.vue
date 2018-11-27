@@ -30,6 +30,7 @@ export default {
   },
   methods: {
     sendEmotion (type) {
+      this.$ga.event('Feeling Button', 'Pressed', type)
       sendEmotion(type)
     }
   }
